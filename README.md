@@ -63,6 +63,7 @@ export const LinkWithFixedTap = (props) => (
   // add css rule for active state
   &[data-tap='active'] {
     background-color: red;
+    // transition-delay is used to prevent tap state activating on scroll
     transition: background-color 0ms 70ms;
   }
 }
