@@ -8,6 +8,7 @@
 
 Controls in mobile web browsers sometimes behave inconsistently. This library allows you
 
+- to reset active state on scroll
 - to reliably display a custom style on a tapped element
 - taps result in persistent active state if UI blocks (page transition)
 
