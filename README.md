@@ -13,18 +13,21 @@ npm install --save use-tap-toggle
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from 'use-tap-toggle'
-import 'use-tap-toggle/dist/index.scss'
+import useTapToggle from 'use-tap-toggle'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+  // call this hook in the root app component
+  useTapToggle()
+  return <div>This is the root of your app</div>
 }
 ```
 
 ## License
 
 MIT © [Uncleseneca](https://github.com/Uncleseneca)
+
+## Acnowledgements
+
+This library is heavily inspired by [this talk](https://www.youtube.com/watch?v=W6_KxNvRxr4&t=212s) by awesome Alex Holachek
