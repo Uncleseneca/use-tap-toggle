@@ -1,6 +1,6 @@
 {
   "name": "use-tap-toggle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A hook which fixes tap handling on mobile phones",
   "author": "Uncleseneca",
   "license": "MIT",
