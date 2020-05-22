@@ -75,7 +75,3 @@ MIT © [Uncleseneca](https://github.com/Uncleseneca)
 ## Acnowledgements
 
 This library is heavily inspired by [this talk](https://www.youtube.com/watch?v=W6_KxNvRxr4) by awesome Alex Holachek
-
-```
-
-```
