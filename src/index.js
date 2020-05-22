@@ -4,7 +4,7 @@ const dataAttribute = 'tap'
 const tapActiveValue = 'active'
 const capture = false
 
-let isTouchDevice = false
+let isDeviceTouched = false
 
 const getInteractiveEl = (event) => {
   try {
@@ -34,8 +34,8 @@ const removeClass = (event) => {
 const removeActiveClassEvents = ['touchmove', 'touchcancel', 'click']
 
 const onTouchStart = (event) => {
-  if (!isTouchDevice) {
-    isTouchDevice = true
+  if (!isDeviceTouched) {
+    isDeviceTouched = true
     // we only need to add these listeners if it's a touch device
     removeActiveClassEvents.forEach((event) =>
       document.body.addEventListener(event, removeClass, capture)
