@@ -60,7 +60,7 @@ export const LinkWithFixedTap = (props) => (
     text-decoration: none;
   }
 
-  // add css rule for
+  // add css rule for active state
   &[data-tap='active'] {
     background-color: red;
     transition: background-color 0ms 70ms;
