@@ -1,0 +1,78 @@
+.page {
+  padding: 1rem;
+  & h2 {
+    font-size: 1.5rem;
+  }
+  margin-bottom: 10rem;
+}
+
+.testLinkOne {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  color: var(--color-blue);
+
+  &:active,
+  &:hover {
+    color: var(--color-blue);
+    text-decoration: none;
+  }
+  @media (pointer: fine) {
+    &:hover,
+    &:active {
+      background-color: var(--color-transparent-blue);
+    }
+  }
+
+  &[data-tap='active'] {
+    background-color: var(--color-transparent-blue);
+    transition: background-color 0ms 70ms;
+  }
+}
+
+.navTitle {
+  font-weight: bold;
+}
+
+.profile {
+  height: 120px;
+  width: 120px;
+  border-radius: 100px;
+  object-fit: cover;
+  z-index: 1;
+  display: block;
+  margin: 2rem auto 2rem auto;
+  background-color: grey;
+}
+
+.header {
+  padding: 1rem;
+  background-color: var(--color);
+  color: white;
+  & h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+.testLinkTwo {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  color: var(--color-blue);
+  &:active,
+  &:hover {
+    color: var(--color-blue);
+    text-decoration: none;
+  }
+  @media (pointer: fine) {
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  &[data-tap='active'] {
+    box-shadow: 0 2px;
+    font-weight: bold;
+    transition: box-shadow 0ms 70ms, font-weight 0ms 70ms;
+  }
+}

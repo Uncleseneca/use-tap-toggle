@@ -16,7 +16,7 @@ npm install --save use-tap-toggle
 import React, { Component } from 'react'
 
 import MyComponent from 'use-tap-toggle'
-import 'use-tap-toggle/dist/index.css'
+import 'use-tap-toggle/dist/index.scss'
 
 class Example extends Component {
   render() {

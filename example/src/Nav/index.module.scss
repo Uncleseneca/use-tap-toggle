@@ -1,0 +1,60 @@
+.navItem {
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  color: var(--color-black);
+  padding: 1.25rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  & svg {
+    height: 3.25rem;
+  }
+
+  @media (pointer: fine) {
+    &:hover {
+      background-color: var(--backgroundColor);
+      color: var(--color);
+    }
+  }
+
+  &[data-tap='active'] {
+    background-color: var(--backgroundColor);
+    color: var(--color);
+    transition: background-color 0ms, color 0ms;
+    transition-delay: 60ms;
+  }
+
+  &.navItemActive {
+    color: var(--color);
+  }
+}
+
+.navList {
+  padding: 0.5rem;
+  justify-content: space-between;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  & > li {
+    flex: 1 0 1;
+  }
+}
+
+.nav {
+  width: 100vw;
+  position: fixed;
+  overflow: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -2px 14px hsla(0, 0%, 0%, 0.13);
+  background-color: white;
+  touch-action: pan-x;
+}

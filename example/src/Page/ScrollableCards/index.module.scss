@@ -1,0 +1,42 @@
+.cardList {
+  list-style-type: none;
+  display: grid;
+  grid-auto-flow: column;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 1rem 0 1rem;
+  grid-gap: 1rem;
+  width: 100%;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  margin-bottom: 3rem;
+  &::after {
+    content: '';
+    width: 3rem;
+  }
+  scrollbar-color: transparent;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & li {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.cardLink {
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 150ms 100ms;
+  display: inline-block;
+  width: 100%;
+  scroll-snap-align: start;
+  height: 8rem;
+  width: 8rem;
+  overflow: hidden;
+  &[data-tap='active'] {
+    transform: scale(0.925);
+  }
+}
