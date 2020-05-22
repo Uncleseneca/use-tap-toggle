@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Nav from './Nav'
 import Page from './Page'
 import styles from './App.module.scss'
-// import useTapToggle from "./useTapToggle";
+import useTapToggle from './useTapToggle'
 import config from './config'
 
 function App() {
-  // useTapToggle();
+  useTapToggle()
   return (
     <Router>
       <div className={styles.app}>

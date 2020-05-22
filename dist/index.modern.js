@@ -1,26 +1,24 @@
 import React from 'react';
 
-var dataAttribute = 'tap';
-var tapActiveValue = 'active';
-var capture = false;
-var isTouchDevice = false;
+const dataAttribute = 'tap';
+const tapActiveValue = 'active';
+const capture = false;
+let isTouchDevice = false;
 
-var getInteractiveEl = function getInteractiveEl(event) {
+const getInteractiveEl = event => {
   try {
-    return event.composedPath().find(function (el) {
-      return el.dataset && el.dataset[dataAttribute] !== undefined;
-    });
+    return event.composedPath().find(el => el.dataset && el.dataset[dataAttribute] !== undefined);
   } catch (e) {
     return undefined;
   }
 };
 
-var removeClass = function removeClass(event) {
-  var interactiveEl = getInteractiveEl(event);
+const removeClass = event => {
+  const interactiveEl = getInteractiveEl(event);
   if (!interactiveEl) return;
 
   if (event.type === 'click') {
-    return setTimeout(function () {
+    return setTimeout(() => {
       interactiveEl.dataset[dataAttribute] = '';
     });
   }
@@ -28,17 +26,15 @@ var removeClass = function removeClass(event) {
   interactiveEl.dataset[dataAttribute] = '';
 };
 
-var removeActiveClassEvents = ['touchmove', 'touchcancel', 'click'];
+const removeActiveClassEvents = ['touchmove', 'touchcancel', 'click'];
 
-var onTouchStart = function onTouchStart(event) {
+const onTouchStart = event => {
   if (!isTouchDevice) {
     isTouchDevice = true;
-    removeActiveClassEvents.forEach(function (event) {
-      return document.body.addEventListener(event, removeClass, capture);
-    });
+    removeActiveClassEvents.forEach(event => document.body.addEventListener(event, removeClass, capture));
   }
 
-  var interactiveEl = getInteractiveEl(event);
+  const interactiveEl = getInteractiveEl(event);
 
   if (interactiveEl) {
     interactiveEl.dataset[dataAttribute] = tapActiveValue;
@@ -51,13 +47,11 @@ function addTapListeners() {
 
 function removeTapListeners() {
   document.body.removeEventListener('touchstart', onTouchStart, capture);
-  removeActiveClassEvents.forEach(function (event) {
-    return document.body.removeEventListener(event, removeClass, capture);
-  });
+  removeActiveClassEvents.forEach(event => document.body.removeEventListener(event, removeClass, capture));
 }
 
 function useTapToggle() {
-  React.useEffect(function () {
+  React.useEffect(() => {
     if (typeof window !== 'undefined') {
       addTapListeners();
       return removeTapListeners;
